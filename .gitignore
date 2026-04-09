@@ -1,3 +1,5 @@
-node_modules/
+.node/
 kuromoji-dict-sudachi/
+node-*.tar.gz
+node_modules/
 sudachi-dict-*/

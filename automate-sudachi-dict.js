@@ -5,7 +5,7 @@ const unzipper = require('unzipper');
 const path = require('path');
 
 // SudachiDictの最新リリースをダウンロード
-const SUDACHI_DICT_URL = 'http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict-raw/';
+const SUDACHI_DICT_URL = 'https://d2ej7fkh96fzlu.cloudfront.net/sudachidict-raw/';
 const MATRIX_DEF_URL = `${SUDACHI_DICT_URL}matrix.def.zip`;
 
 async function getLatestVersion() {

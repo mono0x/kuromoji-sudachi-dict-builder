@@ -17,7 +17,6 @@ Pii Jey さんの https://qiita.com/piijey/items/2517af039bbedddec7b8 を元に�
 
 ## 必要環境
 
-- Node.js (Voltaを使用する場合は指定バージョン `10.16.3`)
 - awk コマンドが入っている環境
 
 ## インストール
@@ -32,10 +31,11 @@ cd kuromoji-sudachi-dict-builder
 2. 必要な依存パッケージをインストール
 
 ```bash
-volta install node@10.16.3
-volta pin node@10.16.3
-node --version # 10.16.3 になっていることを確認
-npm install
+curl -O https://nodejs.org/dist/v10.16.3/node-v10.16.3-darwin-x64.tar.gz
+mkdir .node
+tar -xzf node-v10.16.3-darwin-x64.tar.gz --strip-components=1 -C .node
+.node/bin/node --version # 10.16.3 になっていることを確認
+.node/bin/npm install
 ```
 
 ## 使い方
@@ -43,7 +43,7 @@ npm install
 以下を実行し辞書をビルドします。
 
 ```bash
-npm run build-sudachi-dict
+PATH="$(pwd)/.node/bin:$PATH" .node/bin/npm run build-sudachi-dict
 ```
 
 このコマンドを実行すると、Sudachi辞書の最新バージョンをダウンロードし、kuromoji.js互換の辞書を作成します。
@@ -57,4 +57,3 @@ NextJS + Mantine v7 でサンプルアプリケーションを用意していま
 ## 注意点
 
 - `awk` がインストールされている必要があります。macOSやLinuxではデフォルトで含まれていますが、Windowsを使用している場合は別途インストールが必要です
-- Voltaを使用する場合は、Node.jsのバージョンが固定されています。他のバージョンを使用する場合は、`package.json`の`volta`設定を変更してください

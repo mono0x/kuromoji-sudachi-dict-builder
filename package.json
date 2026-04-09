@@ -10,8 +10,5 @@
     "kuromoji": "^0.1.2",
     "node-fetch": "^2.6.7",
     "unzipper": "^0.10.11"
-  },
-  "volta": {
-    "node": "10.16.3"
   }
 }
